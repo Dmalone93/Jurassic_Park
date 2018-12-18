@@ -17,8 +17,12 @@ Park.prototype.removeDinosaur = function(dinosaur){
 
 Park.prototype.findDinosaur = function(dinosaur){
   for (let dinosaur of this.collectionOfDinosaurs){
-    if dinosaur.guestsAttractedPerDay === 70 {
-      return dinosaur
+    total = 0;
+    if dinosaur.guestsAttractedPerDay {
+      numberOfGuests = total += dinosaur.guestsAttractedPerDay{
+      }
+    }
+    if total === dinosaur.guestsAttractedPerDay{
     }
   }
 
