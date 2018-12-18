@@ -13,7 +13,14 @@ Park.prototype.removeDinosaur = function(dinosaur){
   this.collectionOfDinosaurs.pop(dinosaur);
 };
 
+
+
 Park.prototype.findDinosaur = function(dinosaur){
-  this.collectionOfDinosaurs.find(dinosaur.species);
+  for (let dinosaur of this.collectionOfDinosaurs){
+    if dinosaur.guestsAttractedPerDay === 70 {
+      return dinosaur
+    }
+  }
+
 };
 module.exports = Park;

@@ -5,7 +5,9 @@ const Dinosaur = require('../models/dinosaur.js');
 describe('Park', function() {
 
   let park;
-  const dinosaur = new Dinosaur('t-rex');
+  const dinosaur = new Dinosaur('t-rex', 'meat', 50);
+  const dinosaur2 = new Dinosaur('t-rex', 'meat', 60);
+  const dinosaur3 = new Dinosaur('t-rex', 'meat', 70);
 
   beforeEach(function () {
     park = new Park('Jurassic Park', 20)
@@ -39,15 +41,17 @@ describe('Park', function() {
   });
 
   it('should be able to find the dinosaur that attracts the most visitors', function(){
-    park.findDinosaur(dinosaur)
-    const actual = park.collectionOfDinosaurs;
-    assert.deepStrictEqual(actual, [])
+    park.addDinosaur(dinosaur)
+    park.addDinosaur(dinosaur2)
+    park.addDinosaur(dinosaur3)
+    const actual = park.findDinosaur()
+    assert.deepStrictEqual(actual, [dinosaur])
   });
 
   it('should be able to find all dinosaurs of a particular species');
 
   it('should be able to remove all dinosaurs of a particular species');
-  
+
   // Calculate the total number of visitors per day
 
   // Calculate the total number of visitors per year
