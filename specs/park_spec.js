@@ -5,9 +5,10 @@ const Dinosaur = require('../models/dinosaur.js');
 describe('Park', function() {
 
   let park;
+  const dinosaur = new Dinosaur('t-rex');
 
   beforeEach(function () {
-    park = new Park('Jurassic Park', 20, [])
+    park = new Park('Jurassic Park', 20)
 
   })
 
@@ -23,16 +24,33 @@ describe('Park', function() {
 
   it('should have a collection of dinosaurs', function (){
     const actual = park.collectionOfDinosaurs;
-    assert.strictEqual(actual, ['t-rex', 'velocorapter', 'gerry'])
+    assert.deepStrictEqual(actual, [])
   });
-  it('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function (){
+    park.addDinosaur(dinosaur)
+    const actual = park.collectionOfDinosaurs;
+    assert.deepStrictEqual(actual, [dinosaur])
+  });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function (){
+    park.removeDinosaur(dinosaur)
+    const actual = park.collectionOfDinosaurs;
+    assert.deepStrictEqual(actual, [])
+  });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function(){
+    park.findDinosaur(dinosaur)
+    const actual = park.collectionOfDinosaurs;
+    assert.deepStrictEqual(actual, [])
+  });
 
   it('should be able to find all dinosaurs of a particular species');
 
   it('should be able to remove all dinosaurs of a particular species');
+  
+  // Calculate the total number of visitors per day
 
+  // Calculate the total number of visitors per year
+
+  // Calculate the total revenue from ticket sales for one year
 });
