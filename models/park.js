@@ -15,16 +15,13 @@ Park.prototype.removeDinosaur = function(dinosaur){
 
 
 
-Park.prototype.findDinosaur = function(dinosaur){
-  for (let dinosaur of this.collectionOfDinosaurs){
-    total = 0;
-    if dinosaur.guestsAttractedPerDay {
-      numberOfGuests = total += dinosaur.guestsAttractedPerDay{
-      }
-    }
-    if total === dinosaur.guestsAttractedPerDay{
-    }
-  }
+Park.prototype.findPopularDinosaur = function(dinosaur3){
+
+  sorted = this.collectionOfDinosaurs.sort(function (a, b) {
+  return a.guestsAttractedPerDay - b.guestsAttractedPerDay;
+});
+
+return sorted[0]
 
 };
 module.exports = Park;

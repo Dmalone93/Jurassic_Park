@@ -5,9 +5,10 @@ const Dinosaur = require('../models/dinosaur.js');
 describe('Park', function() {
 
   let park;
+
   const dinosaur = new Dinosaur('t-rex', 'meat', 50);
-  const dinosaur2 = new Dinosaur('t-rex', 'meat', 60);
-  const dinosaur3 = new Dinosaur('t-rex', 'meat', 70);
+  const dinosaur2 = new Dinosaur('velos', 'meat', 60);
+  const dinosaur3 = new Dinosaur('herbasauce', 'sauceyherbs', 70);
 
   beforeEach(function () {
     park = new Park('Jurassic Park', 20)
@@ -44,8 +45,8 @@ describe('Park', function() {
     park.addDinosaur(dinosaur)
     park.addDinosaur(dinosaur2)
     park.addDinosaur(dinosaur3)
-    const actual = park.findDinosaur()
-    assert.deepStrictEqual(actual, [dinosaur])
+    const actual = park.findPopularDinosaur()
+    assert.deepStrictEqual(actual, dinosaur)
   });
 
   it('should be able to find all dinosaurs of a particular species');
